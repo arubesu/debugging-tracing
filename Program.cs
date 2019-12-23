@@ -9,12 +9,12 @@ namespace debuggertracing
 		{
 			BuildTraceListener();
 
-			CounterToN(1);
+			CounterToN(10);
 		}
 
 		private static void BuildTraceListener()
 		{
-			TraceListener traceListener = new TextWriterTraceListener("filename.txt");
+			var traceListener = new TextWriterTraceListener("filename.txt");
 			Trace.AutoFlush = true;
 			Trace.Listeners.Add(traceListener);
 		}
@@ -32,12 +32,14 @@ namespace debuggertracing
 		/// This Method is only executed in Debug mode
 		/// </summary>
 		/// <param name="n"></param>
-		[Conditional("Debug")]
+		[Conditional("DEBUG")]
 		static void CounterToN(int n)
 		{
+			Trace.WriteLine($"Starting CounterToN");
 			for (int i = 0; i < n; i++)
 			{
 				Console.WriteLine(i);
+				Trace.WriteLine(i);
 			}
 		}
 
