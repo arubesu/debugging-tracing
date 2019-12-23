@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace debugger_tracing
+namespace debuggertracing
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			CounterToN(10);
+#if Debug_01
+#warning "This is an Warning Message"
+#error "This line break Application"
+#endif
 		}
 
 
@@ -31,6 +34,12 @@ namespace debugger_tracing
 			{
 				Console.WriteLine(i);
 			}
+
+		}
+
+		static void PrintToConsole()
+		{
+			Console.WriteLine("Hello world!");
 		}
 	}
 }
