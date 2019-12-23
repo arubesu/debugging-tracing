@@ -11,6 +11,9 @@ namespace debuggertracing
 #warning "This is an Warning Message"
 #error "This line break Application"
 #endif
+
+
+
 		}
 
 
@@ -37,6 +40,7 @@ namespace debuggertracing
 
 		}
 
+		[DebuggerStepThrough]
 		static void PrintToConsole()
 		{
 			Console.WriteLine("Hello world!");
