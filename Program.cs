@@ -23,5 +23,14 @@ namespace debugger_tracing
 				Console.WriteLine(i);
 			}
 		}
+
+		[Obsolete("This method is obsolete, use y instead")]
+		static void ObsoleteMethod(int n)
+		{
+			for (int i = 0; i < n; i++)
+			{
+				Console.WriteLine(i);
+			}
+		}
 	}
 }
