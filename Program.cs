@@ -7,13 +7,24 @@ namespace debuggertracing
 	{
 		static void Main(string[] args)
 		{
+			BuildTraceListener();
+
+			CounterToN(1);
+		}
+
+		private static void BuildTraceListener()
+		{
+			TraceListener traceListener = new TextWriterTraceListener("filename.txt");
+			Trace.AutoFlush = true;
+			Trace.Listeners.Add(traceListener);
+		}
+
+		static void ConditionalCompiler()
+		{
 #if Debug_01
 #warning "This is an Warning Message"
 #error "This line break Application"
 #endif
-
-
-
 		}
 
 
